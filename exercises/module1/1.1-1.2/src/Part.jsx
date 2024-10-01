@@ -1,7 +1,7 @@
 const Part = ({ name, number }) => {
   return (
     <p>
-      {name} {number}
+      {name} {number} 
     </p>
   );
 };
