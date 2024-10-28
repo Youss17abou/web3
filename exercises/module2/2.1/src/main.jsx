@@ -5,6 +5,6 @@ import ClickCounter from './components/ClickCounter'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-        <ClickCounter title={"Click Counter"} message={"You are a master in the art of clicking !"} />
+        <ClickCounter title={"Click Counter"} message={"Please click on me now !"} />
   </StrictMode>,
 )
