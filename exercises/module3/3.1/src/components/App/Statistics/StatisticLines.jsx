@@ -1,6 +1,7 @@
-const StatisticLine = ({ text, value }) => (
-    <div>
-      <p>{text} {value}</p>
-    </div>
-  );
-   export default StatisticLine;
+const StatisticLines = ({ text, value }) => (
+  <tr>
+    <td>{text}</td>
+    <td>{value}</td>
+  </tr>
+);
+export default StatisticLines;

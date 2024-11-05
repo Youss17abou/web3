@@ -1,5 +1,5 @@
-import StatisticLine from "./StatisticLines";
-
+import "./Statistics.css";
+import StatisticLines from "./StatisticLines";
 const statistics = ({ good, neutral, bad }) => {
   const all = good + neutral + bad;
   if (all === 0) {
@@ -14,18 +14,24 @@ const statistics = ({ good, neutral, bad }) => {
   return (
     <div>
       <h1>statistics</h1>
-      <StatisticLine text="good" value={good} />
-      <StatisticLine text="neutral" value={neutral} />
-      <StatisticLine text="bad" value={bad} />
-      <StatisticLine text="all" value={all} />
-      <StatisticLine
-        text="average"
-        value={all ? ((good - bad) / all).toFixed(2) : 0}
-      />
-      <StatisticLine
-        text="positive"
-        value={all ? ((good / all) * 100).toFixed(2) : 0}
-      />
+      <div>
+        <table>
+          <tbody>
+            <StatisticLines text="good" value={good} />
+            <StatisticLines text="neutral" value={neutral} />
+            <StatisticLines text="bad" value={bad} />
+            <StatisticLines text="all" value={all} />
+            <StatisticLines
+              text="average"
+              value={all ? ((good - bad) / all).toFixed(2) : 0}
+            />
+            <StatisticLines
+              text="positive"
+              value={all ? ((good / all) * 100).toFixed(2) : 0}
+            />
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
