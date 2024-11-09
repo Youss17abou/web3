@@ -1,13 +1,18 @@
 import { useState } from "react";
 
 import "./App.css";
-import Button from "./Button/Button"; // Corrected import path
-import Statisics from "./Statistics/Statistics"; // Corrected import path
+import Button from "../Button/Button"; // Corrected import path
+import Statisics from "../Statistics/Statistics"; // Corrected import path
+import Loading from "../Loading/Loading";
+
 function App() {
   // save clicks of each button to its own state
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+  const [loading, setLoading] = useState(true);
+  setTimeout(() => setLoading(false), 3000);
+  if (loading) return <Loading />;
 
   return (
     <div>
@@ -20,5 +25,4 @@ function App() {
     </div>
   );
 }
-//TODO: 1.8: unicafe step 3 du module 3
 export default App;
