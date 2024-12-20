@@ -34,6 +34,16 @@
       "id": "7",
       "content": "popopoo",
       "important": false
+    },
+    {
+      "id": 8,
+      "content": "popo",
+      "important": false
+    },
+    {
+      "id": 9,
+      "content": "a new note...",
+      "important": true
     }
   ]
 }
