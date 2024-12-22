@@ -10,4 +10,13 @@ const getAll = () => {
     });
 };
 
-export default { getAll };
+const create = (newObject) => {
+  const request = axios.post(baseUrl, newObject);
+  return request
+    .then((response) => response.data)
+    .catch((error) => {
+      console.log("fail", error.message);
+    });
+};
+
+export default { getAll, create };
