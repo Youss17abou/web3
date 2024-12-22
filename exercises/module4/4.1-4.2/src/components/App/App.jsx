@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import personService from "../../services/persons";
+
 
 const App = () => {
-  const [persons, setPersons] = useState([{ name: "Arto Hellas" , number: "040-123456"}]);
+  const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
+
+  useEffect(() => {
+    personService.getAll().then((initialPersons) => {
+      setPersons(initialPersons);
+    });
+  }, []);
 
   const handleNameChange = (event) => {
     setNewName(event.target.value);
