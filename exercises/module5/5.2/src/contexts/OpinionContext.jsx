@@ -5,11 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 const Context = createContext(null);
 
 const ProviderWrapper = ({ children }) => {
-    const [sortedOpinions, setSortedOpinions] = useState([
-        { id: uuidv4(), text: "I love this product", score: 5 },
-        { id: uuidv4(), text: "I hate this product", score: 1 },
-        { id: uuidv4(), text: "This product is ok", score: 3 },
-    ]);
+    const [sortedOpinions, setSortedOpinions] = useState([]);
 
     const increaseOpinionScore = (opinionId) => {
         const newSortedOpinions = [...sortedOpinions];

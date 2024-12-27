@@ -4,7 +4,9 @@ import Opinion from "./Opinion";
 export default function ListOpinions() {
   const { sortedOpinions } = useContext(OpinionContext);
 
-  if (!sortedOpinions) {
+  if (!sortedOpinions || sortedOpinions.length === 0) {
+    console.log("🦧🦧🦧No opinions available.");
+    
     return <div>No opinions available.</div>; // Gestion des cas où sortedOpinions est null
   }
   return (
