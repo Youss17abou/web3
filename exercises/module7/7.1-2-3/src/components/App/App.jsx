@@ -24,6 +24,7 @@ const NavBar = () => {
 const App = () => {
   const defaultMovies = [
     {
+      id: 1,
       title: "Shang-Chi and the Legend of the Ten Rings",
       director: "Destin Daniel Cretton",
       duration: 132,
@@ -34,6 +35,7 @@ const App = () => {
       budget: 150,
     },
     {
+      id: 2,
       title: "The Matrix",
       director: "Lana Wachowski, Lilly Wachowski",
       duration: 136,
@@ -44,6 +46,7 @@ const App = () => {
       budget: 63,
     },
     {
+      id: 3,
       title: "Summer Wars",
       director: "Mamoru Hosoda",
       duration: 114,
@@ -54,6 +57,7 @@ const App = () => {
       budget: 18.7,
     },
     {
+      id: 4,
       title: "The Meyerowitz Stories",
       director: "Noah Baumbach",
       duration: 112,
@@ -63,6 +67,7 @@ const App = () => {
         "An estranged family gathers together in New York City for an event celebrating the artistic work of their father.",
     },
     {
+      id: 5,
       title: "her",
       director: "Spike Jonze",
       duration: 126,
@@ -78,8 +83,10 @@ const App = () => {
   const navigate = useNavigate();
 
   const onMovieAdded = (newMovie) => {
-    console.log("Movie to add:", newMovie);
-    setMovies([...movies, newMovie]);
+    const maxId = movies.reduce((max, movie) => (movie.id > max ? movie.id : max), 0);
+    const newMovieWithId = { ...newMovie, id: maxId + 1 };
+    console.log("Movie to add:", newMovieWithId);
+    setMovies([...movies, newMovieWithId]);
     navigate("/movies");
   };
 

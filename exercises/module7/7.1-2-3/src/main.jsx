@@ -5,6 +5,7 @@ import CinemaPage from "components/Pages/CinemaPage";
 import HomePage from "components/Pages/HomePage";
 import MovieListPage from "components/Pages/MovieListPage";
 import AddMovieForm from "components/AddMovieForm/AddMovieForm";
+import MoviePage from "components/Pages/MoviePage";
 
 import './index.css'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path: "add-movie",
         element: <AddMovieForm />
         ,
+      },
+      {
+        path: "/movies/:id",
+        element: <MoviePage />,
       }
     ],
   },
