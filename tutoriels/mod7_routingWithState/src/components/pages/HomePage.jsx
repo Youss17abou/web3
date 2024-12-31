@@ -2,9 +2,16 @@ import AudioPlayer from "components/AudioPlayer/AudioPlayer";
 import sound from "../../assets/sounds/Infecticide-11-Pizza-Spinoza.mp3";
 import PizzaMenu from "components/PizzaMenu/PizzaMenu";
 import DrinkMenu from "components/DrinkMenu/DrinkMenu";
+import { useOutletContext } from "react-router-dom";
 
 const HomePage = () => {
-  // TODO : Get state & functions
+  // 🟠🟠🟠: Get state & functions
+  const {
+    actionToBePerformed,
+    clearActionToBePerformed,
+    pizzas,
+    drinks,
+  } = useOutletContext();
 
   return (
     <>
