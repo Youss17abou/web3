@@ -1,13 +1,16 @@
 import { useState } from "react";
 import "./AddMovieForm.css";
+import { useOutletContext } from "react-router-dom";
 
-const AddMovieForm = ({ onMovieAdded }) => {
+const AddMovieForm = () => {
   const [title, setTitle] = useState("");
   const [director, setDirector] = useState("");
   const [duration, setDuration] = useState(0);
   const [imageUrl, setImageUrl] = useState("");
   const [description, setDescription] = useState("");
   const [budget, setBudget] = useState(0);
+
+  const { onMovieAdded } = useOutletContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();

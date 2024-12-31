@@ -4,9 +4,11 @@ import App from './components/App/App.jsx'
 import CinemaPage from "components/Pages/CinemaPage";
 import HomePage from "components/Pages/HomePage";
 import MovieListPage from "components/Pages/MovieListPage";
+import AddMovieForm from "components/AddMovieForm/AddMovieForm";
 
 import './index.css'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,11 @@ const router = createBrowserRouter([
       {
         path: "movies",
         element: <MovieListPage />,
+      },
+      {
+        path: "add-movie",
+        element: <AddMovieForm />
+        ,
       }
     ],
   },
